@@ -5,7 +5,6 @@
 
 
    const {Builder, Browser, By, Key, until , Actions } = require('selenium-webdriver');
-
    async function test() {
    let driver = await new Builder().forBrowser("chrome").build();
    
@@ -34,7 +33,7 @@
        await driver.sleep(3000) 
        await ets.sendKeys("joel",Key.ENTER);
        await driver.sleep(3000)
-       await driver.findElement(By.xpath("//span[@class='body-1']")).click();   //             or              //span[normalize-space()='JOEL TEST HOPITAL LYON SUD']
+       await driver.findElement(By.xpath("//span[@class='body-1']")).click();   // or   //span[normalize-space()='JOEL TEST HOPITAL LYON SUD']
        await driver.sleep(3000)
        await driver.findElement(By.xpath("//span[normalize-space()='OUVRIR LA DEMANDE']")).click();
        await driver.sleep(3000)
@@ -79,7 +78,10 @@
        /* Finaliser le panier */
        await driver.findElement(By.xpath('//*[@id="mat-dialog-1"]/ticket-comment-modal-component/form/mat-dialog-actions/base-form-input/button[2]')).click(); // Clic sur "Fianliser le panier"
        await driver.sleep(3000)
-   
+    
+
+       console.log("PANIER FINALISE ");
+
 
        
 } catch (error) { 
